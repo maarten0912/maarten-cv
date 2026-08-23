@@ -1,0 +1,7 @@
+services:
+  maarten-cv:
+    build: .
+    container_name: maarten-cv
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8085:80"
