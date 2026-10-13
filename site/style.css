@@ -95,6 +95,18 @@ h1 {
   text-decoration: underline;
 }
 
+.contact svg {
+  width: 0.95em;
+  height: 0.95em;
+  margin-right: 0.35em;
+  vertical-align: -0.12em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .bio {
   margin: 0 0 2.5rem;
   font-size: 1.02rem;
