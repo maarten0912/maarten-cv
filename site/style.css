@@ -224,4 +224,13 @@ h2 {
   .dates {
     margin-left: 0;
   }
+
+  .contact {
+    flex-direction: column;
+    gap: 0.15rem 0;
+  }
+
+  .contact + .contact {
+    margin-top: 0.15rem;
+  }
 }
