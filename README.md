@@ -13,7 +13,7 @@ container you'll deploy:
 docker compose up --build
 ```
 
-Then visit http://localhost:8085.
+Then visit http://localhost:8100.
 
 ## One-time setup on the Pi
 
@@ -27,7 +27,7 @@ Add a site block to your Caddyfile:
 
 ```
 maarten.cv {
-    reverse_proxy 127.0.0.1:8085
+    reverse_proxy 127.0.0.1:8100
 }
 ```
 
