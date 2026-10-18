@@ -42,11 +42,17 @@ repo secrets (Settings → Secrets and variables → Actions):
 
 | Secret            | Value                                              |
 |--------------------|-----------------------------------------------------|
-| `PI_HOST`          | Pi's hostname or IP reachable from the internet      |
+| `PI_HOST`          | Pi's Tailscale IP (`100.x.y.z`)                      |
 | `PI_USER`          | SSH user on the Pi                                   |
 | `PI_SSH_KEY`       | Private key for a deploy key with SSH access to the Pi |
 | `PI_PORT`          | SSH port (optional, defaults to 22)                  |
 | `PI_DEPLOY_PATH`   | Path to the repo clone on the Pi, e.g. `/home/pi/apps/maarten-cv` |
+| `TS_OAUTH_CLIENT_ID` | Tailscale OAuth client ID (Auth Keys: write, tag `tag:ci`) |
+| `TS_OAUTH_SECRET`  | Tailscale OAuth client secret |
+
+The deploy job first joins the Pi's tailnet as a short-lived `tag:ci` device
+(`tailscale/github-action`), so `PI_HOST` is the Pi's Tailscale IP, not its
+public hostname, and SSH never goes over the internet.
 
 Generate a dedicated deploy key rather than reusing a personal one:
 
